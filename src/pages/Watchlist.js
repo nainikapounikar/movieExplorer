@@ -102,7 +102,7 @@ export default function WatchlistPage() {
                             rel="noopener noreferrer"
                             className="footer-link"
                         >
-                            &nbsp;Kavya Info Web
+                            &nbsp;Kavya Infoweb Pvt Ltd.
                         </a>
                     </div>
                 </div>
