@@ -1,0 +1,459 @@
+/* src/styles/custom-theme.css */
+
+/* page background */
+.app-bg {
+    min-height: 100vh;
+    background: #000000;
+    /* black page */
+    color: #ffffff;
+    padding: 32px 0;
+}
+
+/* make the container fully transparent */
+.app-bg .container {
+    background: transparent !important;
+}
+
+/* REMOVE white background from search card */
+.search-card {
+    background: transparent;
+    /* no white box */
+    padding: 10px 0;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+    box-shadow: none;
+    /* remove box shadow */
+    border-radius: 0;
+}
+
+/* input fields should be white */
+.search-card .form-control,
+.search-card .form-select {
+    background: #ffffff !important;
+    /* white fields */
+    color: #111 !important;
+    border: 1px solid #e6e6e6;
+}
+
+/* keep heading white */
+.app-bg h1 {
+    color: #ffffff;
+}
+
+/* movie cards stay white */
+.movie-card,
+.card {
+    background: #ffffff;
+    color: #111;
+    margin-top: 40px;
+}
+
+/* alert for dark theme */
+.app-bg .alert {
+    background: #2a2a2e;
+    color: #ffd27a;
+    border: 1px solid #333;
+}
+
+/* responsive */
+@media (max-width: 576px) {
+    .search-card {
+        gap: 8px;
+    }
+}
+
+.top-right-buttons {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: row;
+    /* ⬅ all buttons in one row */
+    gap: 12px;
+    z-index: 9999;
+}
+
+.top-btn {
+    background: #ffffff;
+    color: #000;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: 0.2s ease;
+}
+
+.top-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Desktop navbar row */
+.desktop-navbar {
+    gap: 12px;
+}
+
+/* Make inputs smaller and keep in one row */
+.search-form-nav {
+    min-width: 0;
+}
+
+.search-input-nav {
+    min-width: 140px;
+    max-width: 220px;
+}
+
+.search-select-nav {
+    width: 110px;
+}
+
+.search-year-nav {
+    width: 90px;
+}
+
+.search-btn-nav {
+    padding: 6px 12px;
+    white-space: nowrap;
+}
+
+/* Desktop watchlist button */
+.watchlist-btn-desktop {
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #000;
+    border: 1px solid #ddd;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Mobile layout (you can tweak existing mobile classes) */
+.mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    margin-bottom: 8px;
+}
+
+.mobile-search-container {
+    padding: 0 16px 8px;
+}
+
+.mobile-search-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mobile-search-input {
+    flex: 1;
+}
+
+/* Ensure hamburger only on mobile */
+@media (min-width: 768px) {
+
+    .mobile-header,
+    .mobile-search-container {
+        display: none !important;
+    }
+}
+
+/* ---------- Desktop single-row layout ---------- */
+
+/* Desktop row container */
+.desktop-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* Search form takes available space */
+.search-form-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1 1 auto;
+    /* grow to fill row */
+    min-width: 0;
+    /* allow inputs to shrink */
+    margin: 0;
+}
+
+/* Input sizes (fixed-ish) but allow shrink on narrow widths */
+.search-input-nav {
+    flex: 1 1 320px;
+    /* primary element, expands */
+    min-width: 160px;
+    max-width: 680px;
+    border-radius: 10px;
+    padding: 10px 12px;
+}
+
+/* select and year have fixed width */
+.search-select-nav {
+    flex: 0 0 120px;
+    min-width: 90px;
+    max-width: 140px;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+.search-year-nav {
+    flex: 0 0 100px;
+    min-width: 70px;
+    max-width: 120px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    color: #ffffff !important;
+}
+
+/* search button compact */
+.search-btn-nav {
+    flex: 0 0 auto;
+    padding: 8px 14px;
+    white-space: nowrap;
+    border-radius: 8px;
+}
+
+/* watchlist button to the right */
+.nav-right-desktop {
+    flex: 0 0 auto;
+    margin-left: 12px;
+}
+
+/* ensure the watchlist button aligns with form height for a neat row */
+.watchlist-btn-desktop {
+    display: inline-flex;
+    align-items: center;
+    height: 40px;
+    padding: 8px 14px;
+    border-radius: 8px;
+}
+
+/* Prevent wrapping on desktop */
+@media (min-width: 992px) {
+    .desktop-navbar .desktop-row {
+        flex-wrap: nowrap;
+    }
+}
+
+/* On medium screens allow mild wrapping if necessary */
+@media (max-width: 991px) and (min-width: 576px) {
+    .desktop-navbar .desktop-row {
+        gap: 10px;
+    }
+
+    .search-input-nav {
+        flex: 1 1 220px;
+    }
+
+    .search-select-nav {
+        flex: 0 0 110px;
+    }
+
+    .search-year-nav {
+        flex: 0 0 90px;
+    }
+}
+
+/* Keep mobile layout unchanged (hide desktop bar on small screens) */
+@media (max-width: 767px) {
+    .desktop-navbar {
+        display: none;
+    }
+
+    .mobile-header,
+    .mobile-search-container {
+        display: block;
+    }
+}
+
+.cards-wrapper {
+    margin-top: 40px;
+}
+
+/* Force white text for the Year input (and its placeholder/autofill) */
+.desktop-navbar .search-form-nav .form-control.search-year-nav {
+    color: #ffffff !important;
+    background: transparent !important;
+    /* remove white bg if any */
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+/* placeholder color */
+.desktop-navbar .search-form-nav .form-control.search-year-nav::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+    opacity: 1;
+}
+
+/* Chrome autofill (if user had filled the field earlier) */
+.desktop-navbar .search-form-nav .form-control.search-year-nav:-webkit-autofill,
+.desktop-navbar .search-form-nav .form-control.search-year-nav:-internal-autofill-selected {
+    -webkit-text-fill-color: #ffffff !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+
+/* Sticky header wrapper */
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #000000;
+    /* match .app-bg */
+}
+
+/* Optional: keep the header container tight so main content doesn't double‑pad */
+.header-container {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+/* Ensure main content starts below header visually */
+.main-content {
+    padding-top: 8px;
+}
+
+.desktop-title {
+    /* default: visible */
+}
+
+@media (max-width: 767.98px) {
+    .desktop-title {
+        display: none;
+    }
+}
+
+/* mobile title default: visible */
+.mobile-title {
+    display: block;
+}
+
+/* desktop title default: visible on large screens */
+.desktop-title {
+    display: block;
+}
+
+/* Mobile: hide desktop title */
+@media (max-width: 767.98px) {
+    .desktop-title {
+        display: none;
+    }
+}
+
+/* Desktop: hide mobile title */
+@media (min-width: 768px) {
+    .mobile-title {
+        display: none;
+    }
+}
+
+/* mobile container visible only on small screens */
+.mobile-search-container {
+    padding: 8px 16px;
+}
+
+@media (min-width: 768px) {
+    .mobile-search-container {
+        display: none;
+    }
+}
+
+/* row with title + hamburger */
+.mobile-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.mobile-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* hamburger button – only mobile */
+.mobile-hamburger {
+    background: #ffffff;
+    color: #000;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    padding: 4px 10px;
+    font-size: 18px;
+}
+
+/* search row */
+.mobile-search-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mobile-search-input {
+    flex: 1;
+}
+
+/* dropdown box under header */
+.mobile-menu-box {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mobile-menu-item {
+    width: 100%;
+    text-align: left;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: #1f2933;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Footer Styles */
+.app-footer {
+    background: #2d3748;
+    padding: 20px 0;
+    margin-top: 60px;
+    color: #ffffff;
+}
+
+.app-bg {
+    padding: 32px 0 0 0;
+}
+
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.footer-link {
+    color: #60a5fa;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: #93c5fd;
+}
+
+/* Mobile responsive */
+@media (max-width: 576px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+}
