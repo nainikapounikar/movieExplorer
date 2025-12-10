@@ -457,3 +457,50 @@
         gap: 8px;
     }
 }
+
+.app-footer {
+    background: #000;
+    color: #fff;
+    padding: 15px 0;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    width: 100%;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+
+    /* Remove container padding gap */
+    width: 100%;
+    padding: 0 15px;
+    /* small padding only */
+    max-width: 100% !important;
+}
+
+.footer-left,
+.footer-right {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-link {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .footer-inner {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+        padding: 10px 0;
+    }
+}

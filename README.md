@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# 🎬 Movie Explorer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive movie search app built with **React + OMDB API** featuring search, filters, pagination, and a watchlist saved in LocalStorage.
 
-## Available Scripts
+## 🔗 Live Demo
 
-In the project directory, you can run:
+👉 **[https://cheerful-macaron-470fe1.netlify.app/](https://cheerful-macaron-470fe1.netlify.app/)**
 
-### `npm start`
+## 📂 GitHub Repository
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+👉 **[https://github.com/Nainika-pounikar/movie-explorer](https://github.com/Nainika-pounikar/movie-explorer)**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## ⭐ Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* 🔍 Search movies, series, and episodes
+* 🎚️ Filters: Type (Movie/Series), Year
+* 📄 Pagination
+* ⭐ Watchlist System (Add/Remove movies)
+* 💾 Watchlist stored in **LocalStorage**
+* 📱 Fully responsive UI
+* 🎨 Modern and clean design
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* **React.js**
+* **OMDB API**
+* **Bootstrap / Custom CSS**
+* **React Router**
+* **Netlify** for Deployment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🚀 Getting Started (Local Setup)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+# Clone the repo
+git clone https://github.com/Nainika-pounikar/movie-explorer.git
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Go into project folder
+cd movie-explorer
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Install dependencies
+npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Start the development server
+npm start
+```
 
-## Learn More
+App will run on:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+http://localhost:3000/
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 🔑 Environment Variables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Create a `.env` file in project root:
 
-### Analyzing the Bundle Size
+```
+REACT_APP_OMDB_API_KEY=17ebbfe5
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 📦 Build for Production
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+npm run build
+```
 
-### Advanced Configuration
+This generates the **build/** folder.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 🌐 Deploy on Netlify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This project is deployed automatically using Netlify.
 
-### `npm run build` fails to minify
+Live URL:
+👉 **[https://cheerful-macaron-470fe1.netlify.app/](https://cheerful-macaron-470fe1.netlify.app/)**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome!
+
+---
+
+## 📜 License
+
+This project is for educational & learning purposes.

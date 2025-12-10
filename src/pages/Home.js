@@ -4,13 +4,11 @@ import MovieList from "../components/MovieList";
 import Pagination from "../components/Pagination";
 import useWatchlist from "../hooks/useWatchlist";
 
-
-
 const API_KEY = process.env.REACT_APP_OMDB_API_KEY || "17ebbfe5";
 const PAGE_SIZE = 10;
 
 export default function Home() {
-    const [query, setQuery] = useState("spider");
+    const [query, setQuery] = useState("");
     const [type, setType] = useState("");
     const [year, setYear] = useState("");
     const [page, setPage] = useState(1);
@@ -37,12 +35,6 @@ export default function Home() {
     }, []);
 
     useEffect(() => {
-        if (!query) {
-            setMovies([]);
-            setTotalResults(0);
-            return;
-        }
-
         const controller = new AbortController();
 
         async function fetchPage() {
@@ -51,7 +43,10 @@ export default function Home() {
             try {
                 const url = new URL("https://www.omdbapi.com/");
                 url.searchParams.set("apikey", API_KEY);
-                url.searchParams.set("s", query);
+
+                // Use "movie" as default search term if query is empty
+                const searchTerm = query.trim() || "movie";
+                url.searchParams.set("s", searchTerm);
                 url.searchParams.set("page", page);
                 if (type) url.searchParams.set("type", type);
                 if (year) url.searchParams.set("y", year);
@@ -140,7 +135,6 @@ export default function Home() {
                     )}
                 </div>
 
-
                 {/* Desktop header + navbar */}
                 <div className="container py-4 header-container">
                     <h1 className="mb-4 desktop-title d-none d-md-block">Movie Explorer</h1>
@@ -196,14 +190,13 @@ export default function Home() {
                             </div>
                         </div>
                     </nav>
-
-                    {/* Mobile menu overlay stays inside sticky wrapper so it anchors to top */}
-
                 </div>
             </div>
 
             {/* Main content scrolls under the sticky header */}
             <div className="container py-4 main-content">
+
+
                 {errorMsg && <div className="alert alert-warning mt-3">{errorMsg}</div>}
                 {loading ? (
                     <div className="loading-text">Loading...</div>
@@ -224,16 +217,26 @@ export default function Home() {
                 )}
             </div>
 
-            {/* Footer */}
             <footer className="app-footer">
-                <div className="container">
-                    <div className="footer-content">
-                        <span>© 2025 Movie Explorer</span>
-                        <span>Designed & Developed by <a href="https://kavyainfoweb.com" target="_blank" rel="noopener noreferrer" className="footer-link">Kavya Info Web</a></span>
+                <div className="container footer-inner">
+                    <div className="footer-left">
+                        © 2025 Movie Explorer
+                    </div>
+
+                    <div className="footer-right">
+                        Designed & Developed by
+                        <a
+                            href="https://kavyainfoweb.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="footer-link"
+                        >
+                            &nbsp;Kavya Info Web
+                        </a>
                     </div>
                 </div>
             </footer>
+
         </div>
     );
-
 }

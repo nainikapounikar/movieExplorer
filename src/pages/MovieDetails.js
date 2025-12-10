@@ -140,12 +140,22 @@ export default function MovieDetails() {
                 )}
             </div>
 
-            {/* Footer */}
             <footer className="app-footer">
-                <div className="container">
-                    <div className="footer-content">
-                        <span>© 2025 Movie Explorer</span>
-                        <span>Designed & Developed by <a href="https://kavyainfoweb.com" target="_blank" rel="noopener noreferrer" className="footer-link">Kavya Info Web</a></span>
+                <div className="container footer-inner">
+                    <div className="footer-left">
+                        © 2025 Movie Explorer
+                    </div>
+
+                    <div className="footer-right">
+                        Designed & Developed by
+                        <a
+                            href="https://kavyainfoweb.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="footer-link"
+                        >
+                            &nbsp;Kavya Info Web
+                        </a>
                     </div>
                 </div>
             </footer>
