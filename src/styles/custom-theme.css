@@ -34,7 +34,7 @@
 .search-card .form-select {
     background: #ffffff !important;
     /* white fields */
-    color: #111 !important;
+    color: #ffffff !important;
     border: 1px solid #e6e6e6;
 }
 
@@ -503,4 +503,13 @@
         text-align: center;
         padding: 10px 0;
     }
+}
+
+/* White placeholder for ALL search inputs */
+.mobile-search-input::placeholder,
+.search-input-nav::placeholder,
+.search-year-nav::placeholder,
+.form-control[placeholder]::placeholder {
+    color: #ffffff !important;
+    opacity: 0.9 !important;
 }
